@@ -160,6 +160,56 @@ virtual double fun()=0;
 class derived : virtual public base
 ```
 
+#### 多态
+
+多态：同一操作作用于不同的对象，可以有不同的解释，产生不同的执行结果。在运行时，可以通过指向基类的指针，来调用实现派生类中的方法。
+
+C++中，实现多态有以下方法：虚函数，抽象类，覆盖，模板（重载和多态无关）。
+
+作用： 把不同的子类对象都当作父类来看，可以屏蔽不同子类对象之间的差异，写出通用的代码，做出通用的编程，以适应需求的不断变化。
+赋值之后，父对象就可以根据当前赋值给它的子对象的特性以不同的方式运作。也就是说，父亲的行为像儿子，而不是儿子的行为像父亲。
+
+```cpp
+class A
+{
+public:
+    A(){}
+    virtual void foo()
+    {
+        cout<<"This is A."<<endl;
+    }
+};
+ 
+class B:public A
+{
+public:
+    B(){}
+    void foo()
+    {
+        cout<<"This is B."<<endl;
+    }
+};
+ 
+int main(int argc,char* argv[])
+{
+    A* a = new B();
+    a->foo();
+    if(a != NULL)
+    delete a;
+    return0;
+}
+```
+
+这将显示：
+This is B.
+
+
+如果把virtual去掉，将显示：
+This is A.
+
+
+此例中多态通过使用虚函数virtual void foo()来实现。
+
 ### 模板
 
 ```cpp
