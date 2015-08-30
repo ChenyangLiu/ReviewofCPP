@@ -38,15 +38,14 @@ a就是数组头的地址。a+1是a[1]的地址。本题中a+1比a大16，如果
 #include <iostream>
 #include <stdio.h>
 using namespace std;
-#define N 3
 
 int main()
 {
-	int a[N][N] = {0};
+	int a[3][4] = {0};
 
-	for (int i = 0; i!=N; i++)
+	for (int i = 0; i!= 3 ; i++)
 	{
-		for (int j = 0; j!=N; j++)
+		for (int j = 0; j!= 4 ; j++)
 		a[i][j] = 10 * i + j;
 	}
 
