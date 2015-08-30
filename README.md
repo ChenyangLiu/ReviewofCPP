@@ -196,9 +196,7 @@ int main(int argc,char* argv[])
 {
     A* a = new B();
     a->foo();
-    if(a != NULL)
-    delete a;
-    return0;
+    return 0;
 }
 ```
 
