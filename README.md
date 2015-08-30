@@ -156,6 +156,8 @@ virtual double fun()=0;
 
 多继承时只继承自一个基类实例
 
+如，B,C均继承自A，D同时继承自B与C，如果不采用虚基类，D中将有两份A。
+
 ```cpp
 class derived : virtual public base
 ```
