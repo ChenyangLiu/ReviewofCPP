@@ -146,7 +146,7 @@ class derived : public base
 
 #### 纯虚函数
 
-存在于无法实例化的抽象类中
+存在于无法实例化的抽象类中 (含有纯虚函数的类叫抽象类)
 
 ```cpp
 virtual double fun()=0;
